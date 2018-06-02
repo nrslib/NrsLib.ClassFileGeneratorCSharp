@@ -1,0 +1,19 @@
+# Class file generator CSharp
+t4 テンプレートを利用したクラスファイルの作成用ライブラリです。  
+
+# 使い方
+
+```
+var classMeta = new ClassMeta("TestNameSpace.Test", "TestClass");
+var driver = new MainDriver();
+var classText = driver.Create(classMeta, Language.CSharp);
+```
+上記のように利用します。  
+```
+classMeta.SetupFields()
+    .AddField("testField", field => field.SetType("int").SetValue("1"));
+```
+というように設定するとメソッドが定義されます。  
+MainDriver.Create の戻り値はただの文字列ですのでそのままファイルに出力などしてください。  
+
+Sample プロジェクトに色々な設定方法を載せています。  

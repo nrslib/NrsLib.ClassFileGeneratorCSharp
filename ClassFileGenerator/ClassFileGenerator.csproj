@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{40523880-519D-432F-AD8B-6826447B4FD7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ClassFileGenerator</RootNamespace>
+    <AssemblyName>ClassFileGenerator</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Meta\ClassMeta.cs" />
+    <Compile Include="Core\Meta\Def\FieldDefinition.cs" />
+    <Compile Include="Core\Meta\Def\GenericDefinition.cs" />
+    <Compile Include="Core\Meta\Def\ImplementDefinition.cs" />
+    <Compile Include="Core\Meta\Def\MethodDefinition.cs" />
+    <Compile Include="Core\Meta\Def\UsingDefinition.cs" />
+    <Compile Include="Core\Meta\Def\VariantDefinition.cs" />
+    <Compile Include="Core\Meta\IMeta.cs" />
+    <Compile Include="Core\Meta\InterfaceMeta.cs" />
+    <Compile Include="Core\Meta\Settings\FieldSetting.cs" />
+    <Compile Include="Core\Meta\Settings\ImplementsSetting.cs" />
+    <Compile Include="Core\Meta\Settings\MethodSetting.cs" />
+    <Compile Include="Core\Meta\Settings\UsingSetting.cs" />
+    <Compile Include="Core\Meta\Words\AccessLevel.cs" />
+    <Compile Include="Core\Templates\CSharp\Class\ClassTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClassTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Templates\CSharp\Class\ClassTemplateDefine.cs" />
+    <Compile Include="Core\Templates\CSharp\Interface\InterfaceTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InterfaceTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Templates\CSharp\Interface\InterfaceTemplateDefine.cs" />
+    <Compile Include="Core\Templates\ITemplate.cs" />
+    <Compile Include="Core\Templates\Language.cs" />
+    <Compile Include="MainDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Core\Templates\CSharp\Class\ClassTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ClassTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Core\Templates\CSharp\Interface\InterfaceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InterfaceTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,53 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ClassFileGenerator.Core.Meta.Words" #>
+<# foreach(var usingDefinitions in usings){ #>
+<#= usingDefinitions.ToText() #>;
+<# } #>
+<# if(usings.Any()){ #>
+
+<# } #>
+namespace <#= nameSpace #>
+{
+    public class <#= className #>
+<# if(implementsSetting.HasAny){ #>
+        : <#= implementsSetting.HeadImplement #>
+<#   foreach(var elem in implementsSetting.TailImplement) { #>
+        , <#= elem #>
+<#   } #>
+<# }#>
+    {<# if(fields.Any()){ #>
+
+<# } #>
+<# foreach(var field in fields){ #>
+        <#= field.AccessLevel.ToText() #> <#if(field.IsReadonly){ #>readonly <# } #><#= field.Type #> <#= field.Name #><# if(field.Value != null){ #> = <#= field.Value #><# } #>;
+<# } #>
+
+<#
+   var isFirst = true;
+   foreach(var method in methods){
+#>
+<#   if(!isFirst) { #>
+
+<#   } #>
+<#   isFirst = false; #>
+        <#= method.AccessLevel.ToText() #> <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText #>)<# if(method.HasAnyGenericsWhere){ #>
+
+<#   foreach(var condition in method.GenericsWheres){ #>
+            where <#= condition #>
+<#   } #>
+<# } #>
+<# if(!method.HasAnyGenericsWhere) { #>
+
+<# } #>
+        {
+<# foreach(var line in method.Body){ #>
+            <#= line #>
+<# } #>
+        }
+<# } #>
+    }
+}
