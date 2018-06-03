@@ -1,7 +1,7 @@
 # Class file generator CSharp
 t4 テンプレートを利用したクラスファイルの作成用ライブラリです。  
 
-詳細は以下に記載しています。
+詳細は以下に記載しています。  
 [https://srnlib.com/class-file-generator/](https://srnlib.com/class-file-generator/ "https://srnlib.com/class-file-generator/")
 
 # 使い方
