@@ -11,6 +11,10 @@ namespace Sample {
         {
             var classMeta = new ClassMeta("TestNameSpace.Test", "TestClass");
 
+            // setup partial class
+            classMeta.SetupClass()
+                .SetPartial(true);
+
             // setup using
             classMeta.SetupUsing()
                 .AddUsing("System")

@@ -12,7 +12,7 @@
 <# } #>
 namespace <#= nameSpace #>
 {
-    public class <#= className #>
+    public <# if(isPartial){ #>partial <# } #>class <#= className #>
 <# if(implementsSetting.HasAny){ #>
         : <#= implementsSetting.HeadImplement #>
 <#   foreach(var elem in implementsSetting.TailImplement) { #>

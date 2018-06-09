@@ -50,6 +50,7 @@
     <Compile Include="Core\Meta\Def\VariantDefinition.cs" />
     <Compile Include="Core\Meta\IMeta.cs" />
     <Compile Include="Core\Meta\InterfaceMeta.cs" />
+    <Compile Include="Core\Meta\Settings\ClassSetting.cs" />
     <Compile Include="Core\Meta\Settings\FieldSetting.cs" />
     <Compile Include="Core\Meta\Settings\ImplementsSetting.cs" />
     <Compile Include="Core\Meta\Settings\MethodSetting.cs" />

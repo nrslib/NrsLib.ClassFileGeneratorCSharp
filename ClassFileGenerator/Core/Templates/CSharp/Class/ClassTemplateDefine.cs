@@ -13,8 +13,9 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Class
             this.meta = meta;
         }
 
-        private string nameSpace => meta.NameSpace;
-        private string className => meta.ClassName;
+        private string nameSpace => meta.ClassSetting.NameSpace;
+        private string className => meta.ClassSetting.ClassName;
+        private bool isPartial => meta.ClassSetting.IsPartial;
         private UsingDefinition[] usings => meta.UsingDefinitions;
         private ImplementsSetting implementsSetting => meta.ImplementsSetting;
         private FieldDefinition[] fields => meta.fieldDefinitions;
