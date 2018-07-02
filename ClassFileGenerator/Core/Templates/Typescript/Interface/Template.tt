@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="ClassFileGenerator.Core.Meta.Words" #>
+interface <#= interfaceName #>
+<# if(implementsSetting.HasAny){ #>
+    extends <#= implementsSetting.HeadImplement #>
+<#   foreach(var elem in implementsSetting.TailImplement) { #>
+    , <#= elem #>
+<#   } #>
+<# } #>{
+<# foreach(var field in fields){ #>
+    <# if(field.IsReadonly) { #>readonly <# } #><#= field.Name #>: <#= field.Type #>;
+<# } #>
+<# if(fields.Any() && methods.Any()){ #>
+
+<# } #>
+<# foreach(var method in methods){ #>
+    <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText #>)<# if(method.HasAnyGenericsWhere){ #>
+
+<#
+for(var i = 0; i < method.GenericsWheres.Length; i++ ){ 
+    var condition = method.GenericsWheres[i];
+#>
+        where <#= condition #><# if(i < method.GenericsWheres.Length - 1){ #>
+
+<# } #><#   } #><# } #>;
+<# } #>}

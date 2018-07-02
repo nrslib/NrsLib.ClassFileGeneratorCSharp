@@ -7,7 +7,7 @@
 //     コードが再生成されると失われます。
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace ClassFileGenerator.Core.Templates.CSharp.Interface
+namespace ClassFileGenerator.Core.Templates.Typescript.Interface
 {
     using System.Linq;
     using System.Text;
@@ -19,9 +19,9 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Interface
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+    #line 1 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public partial class InterfaceTemplate : InterfaceTemplateBase
+    public partial class Template : TemplateBase
     {
 #line hidden
         /// <summary>
@@ -29,200 +29,212 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Interface
         /// </summary>
         public virtual string TransformText()
         {
+            this.Write("interface ");
             
-            #line 7 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
-
-    foreach(var usingDefinitions in usings){
-
-            
-            #line default
-            #line hidden
-            
-            #line 10 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(usingDefinitions.ToText()));
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n");
-            
-            #line 11 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
- } 
-            
-            #line default
-            #line hidden
-            
-            #line 12 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
- if(usings.Any()){ 
-            
-            #line default
-            #line hidden
-            this.Write("\r\n");
-            
-            #line 14 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
-}
-            
-            #line default
-            #line hidden
-            this.Write("namespace ");
-            
-            #line 15 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(nameSpace));
-            
-            #line default
-            #line hidden
-            this.Write("\r\n{\r\n    public interface ");
-            
-            #line 17 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 7 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(interfaceName));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 18 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 8 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  if(implementsSetting.HasAny){ 
             
             #line default
             #line hidden
-            this.Write("        : ");
+            this.Write("    extends ");
             
-            #line 19 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 9 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(implementsSetting.HeadImplement));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 20 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 10 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
    foreach(var elem in implementsSetting.TailImplement) { 
             
             #line default
             #line hidden
-            this.Write("        , ");
+            this.Write("    , ");
             
-            #line 21 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 11 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(elem));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 22 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 12 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
    } 
             
             #line default
             #line hidden
             
-            #line 23 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 13 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("    {\r\n");
+            this.Write("{\r\n");
             
-            #line 24 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 14 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ foreach(var field in fields){ 
+            
+            #line default
+            #line hidden
+            this.Write("    ");
+            
+            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ if(field.IsReadonly) { 
+            
+            #line default
+            #line hidden
+            this.Write("readonly ");
+            
+            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.Type));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 16 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 17 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ if(fields.Any() && methods.Any()){ 
+            
+            #line default
+            #line hidden
+            this.Write("\r\n");
+            
+            #line 19 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 20 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  foreach(var method in methods){ 
             
             #line default
             #line hidden
-            this.Write("        ");
+            this.Write("    ");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name));
             
             #line default
             #line hidden
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  if(method.HasAnyGenerics){ 
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GenericsList));
             
             #line default
             #line hidden
             this.Write(">");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  } 
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ArgumentsText));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 25 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  if(method.HasAnyGenericsWhere){ 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 27 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 23 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
 
-   for(var i = 0; i < method.GenericsWheres.Length; i++ ){ 
-       var condition = method.GenericsWheres[i];
+for(var i = 0; i < method.GenericsWheres.Length; i++ ){ 
+    var condition = method.GenericsWheres[i];
 
             
             #line default
             #line hidden
-            this.Write("            where ");
+            this.Write("        where ");
             
-            #line 31 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(condition));
             
             #line default
             #line hidden
             
-            #line 31 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  if(i < method.GenericsWheres.Length - 1){ 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 33 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 29 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 33 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 29 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
    } 
             
             #line default
             #line hidden
             
-            #line 33 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 29 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  } 
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 34 "D:\github\ClassFileGenerator\ClassFileGenerator\Core\Templates\CSharp\Interface\InterfaceTemplate.tt"
+            #line 30 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\Typescript\Interface\Template.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}");
+            this.Write("}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }
@@ -234,7 +246,7 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Interface
     /// Base class for this transformation
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "15.0.0.0")]
-    public class InterfaceTemplateBase
+    public class TemplateBase
     {
         #region Fields
         private global::System.Text.StringBuilder generationEnvironmentField;

@@ -62,14 +62,20 @@
       <DependentUpon>ClassTemplate.tt</DependentUpon>
     </Compile>
     <Compile Include="Core\Templates\CSharp\Class\ClassTemplateDefine.cs" />
-    <Compile Include="Core\Templates\CSharp\Interface\InterfaceTemplate.cs">
+    <Compile Include="Core\Templates\CSharp\Interface\Template.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>InterfaceTemplate.tt</DependentUpon>
+      <DependentUpon>Template.tt</DependentUpon>
     </Compile>
-    <Compile Include="Core\Templates\CSharp\Interface\InterfaceTemplateDefine.cs" />
+    <Compile Include="Core\Templates\CSharp\Interface\TemplateDefine.cs" />
     <Compile Include="Core\Templates\ITemplate.cs" />
     <Compile Include="Core\Templates\Language.cs" />
+    <Compile Include="Core\Templates\Typescript\Interface\Template.cs">
+      <DependentUpon>Template.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\Templates\Typescript\Interface\TemplateDefine.cs" />
     <Compile Include="MainDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -79,9 +85,13 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ClassTemplate.cs</LastGenOutput>
     </Content>
-    <Content Include="Core\Templates\CSharp\Interface\InterfaceTemplate.tt">
+    <Content Include="Core\Templates\CSharp\Interface\Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>InterfaceTemplate.cs</LastGenOutput>
+      <LastGenOutput>Template.cs</LastGenOutput>
+    </Content>
+    <Content Include="Core\Templates\Typescript\Interface\Template.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>Template.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

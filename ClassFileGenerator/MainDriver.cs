@@ -3,6 +3,7 @@ using ClassFileGenerator.Core.Meta;
 using ClassFileGenerator.Core.Templates;
 using ClassFileGenerator.Core.Templates.CSharp.Class;
 using ClassFileGenerator.Core.Templates.CSharp.Interface;
+using ClassFileGenerator.Core.Templates.Typescript.Interface;
 
 namespace ClassFileGenerator {
     public class MainDriver {
@@ -39,7 +40,9 @@ namespace ClassFileGenerator {
         private ITemplate FindInterfaceTemplate(InterfaceMeta interfaceMeta, Language language) {
             switch (language) {
                 case Language.CSharp:
-                    return new InterfaceTemplate(interfaceMeta);
+                    return new Core.Templates.CSharp.Interface.Template(interfaceMeta);
+                case Language.Typescript:
+                    return new Core.Templates.Typescript.Interface.Template(interfaceMeta);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(language), language, null);
             }

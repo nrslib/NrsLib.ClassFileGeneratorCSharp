@@ -7,6 +7,7 @@ namespace ClassFileGenerator.Core.Meta
     {
         private readonly UsingSetting usingSetting = new UsingSetting();
         private readonly ImplementsSetting implementsSetting = new ImplementsSetting();
+        private readonly FieldsSetting fieldSetting = new FieldsSetting();
         private readonly MethodsSetting methodSetting = new MethodsSetting();
 
         public InterfaceMeta(string nameSpace, string interfaceName)
@@ -18,9 +19,10 @@ namespace ClassFileGenerator.Core.Meta
         public string NameSpace { get; }
         public string InterfaceName { get; }
         public UsingDefinition[] UsingDefinitions => usingSetting.Usings;
-        public MethodDefinition[] MethodDefinitions => methodSetting.Methods;
         public ImplementsSetting ImplementsSetting => implementsSetting;
-
+        public FieldDefinition[] FieldDefinitions => fieldSetting.Fields;
+        public MethodDefinition[] MethodDefinitions => methodSetting.Methods;
+        
         public UsingSetting SetupUsing()
         {
             return usingSetting;
@@ -29,6 +31,11 @@ namespace ClassFileGenerator.Core.Meta
         public ImplementsSetting SetupImplements()
         {
             return implementsSetting;
+        }
+
+        public FieldsSetting SetupFields()
+        {
+            return fieldSetting;
         }
 
         public MethodsSetting SetupMethod()

@@ -4,11 +4,11 @@ using ClassFileGenerator.Core.Meta.Settings;
 
 namespace ClassFileGenerator.Core.Templates.CSharp.Interface
 {
-    partial class InterfaceTemplate : ITemplate
+    partial class Template : ITemplate
     {
         private readonly InterfaceMeta meta;
 
-        public InterfaceTemplate(InterfaceMeta meta)
+        public Template(InterfaceMeta meta)
         {
             this.meta = meta;
         }
