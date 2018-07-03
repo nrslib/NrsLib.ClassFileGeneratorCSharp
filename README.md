@@ -1,3 +1,7 @@
+# ダウンロード
+
+[dll ダウンロード](https://github.com/srnlib/ClassFileGeneratorCSharp/releases "https://github.com/srnlib/ClassFileGeneratorCSharp/releases")
+
 # Class file generator CSharp
 t4 テンプレートを利用したクラスファイルの作成用ライブラリです。  
 
