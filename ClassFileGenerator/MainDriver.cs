@@ -2,8 +2,6 @@
 using ClassFileGenerator.Core.Meta;
 using ClassFileGenerator.Core.Templates;
 using ClassFileGenerator.Core.Templates.CSharp.Class;
-using ClassFileGenerator.Core.Templates.CSharp.Interface;
-using ClassFileGenerator.Core.Templates.Typescript.Interface;
 
 namespace ClassFileGenerator {
     public class MainDriver {

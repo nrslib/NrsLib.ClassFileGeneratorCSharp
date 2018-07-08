@@ -10,10 +10,5 @@
 
         public string Name { get; }
         public string Type { get; }
-
-        public string ToDeclaration()
-        {
-            return Type + " " + Name;
-        }
     }
 }

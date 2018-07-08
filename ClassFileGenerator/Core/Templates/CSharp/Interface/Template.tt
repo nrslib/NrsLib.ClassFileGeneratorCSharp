@@ -3,7 +3,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
-<#@ import namespace="ClassFileGenerator.Core.Meta.Words" #>
 <#
     foreach(var usingDefinitions in usings){
 #>
@@ -22,7 +21,7 @@ namespace <#= nameSpace #>
 <#   } #>
 <# } #>    {
 <# foreach(var method in methods){ #>
-        <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText #>)<# if(method.HasAnyGenericsWhere){ #>
+        <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText(formatter) #>)<# if(method.HasAnyGenericsWhere){ #>
 
 <#
    for(var i = 0; i < method.GenericsWheres.Length; i++ ){ 

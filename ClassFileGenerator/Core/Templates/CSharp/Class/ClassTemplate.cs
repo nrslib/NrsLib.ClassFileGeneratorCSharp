@@ -13,6 +13,7 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Class
     using System.Text;
     using System.Collections.Generic;
     using ClassFileGenerator.Core.Meta.Words;
+    using ClassFileGenerator.Core.Meta.Def.Methods;
     using System;
     
     /// <summary>
@@ -30,189 +31,189 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Class
         public virtual string TransformText()
         {
             
-            #line 7 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 8 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  foreach(var usingDefinitions in usings){ 
             
             #line default
             #line hidden
             
-            #line 8 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 9 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(usingDefinitions.ToText()));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 9 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 10 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 10 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 11 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(usings.Any()){ 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 12 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 13 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("namespace ");
             
-            #line 13 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 14 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(nameSpace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n    public ");
             
-            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 16 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(isPartial){ 
             
             #line default
             #line hidden
             this.Write("partial ");
             
-            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 16 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("class ");
             
-            #line 15 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 16 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(className));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 16 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 17 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(implementsSetting.HasAny){ 
             
             #line default
             #line hidden
             this.Write("        : ");
             
-            #line 17 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 18 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(implementsSetting.HeadImplement));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 18 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 19 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    foreach(var elem in implementsSetting.TailImplement) { 
             
             #line default
             #line hidden
             this.Write("        , ");
             
-            #line 19 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 20 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(elem));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 20 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    } 
             
             #line default
             #line hidden
             
-            #line 21 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 22 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  }
             
             #line default
             #line hidden
             this.Write("    {");
             
-            #line 22 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 23 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(fields.Any()){ 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 24 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 25 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 25 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  foreach(var field in fields){ 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.AccessLevel.ToText()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
 if(field.IsReadonly){ 
             
             #line default
             #line hidden
             this.Write("readonly ");
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Type));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(field.Value != null){ 
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Value));
             
             #line default
             #line hidden
-            
-            #line 26 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
- } 
-            
-            #line default
-            #line hidden
-            this.Write(";\r\n");
             
             #line 27 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
+            this.Write(";\r\n");
+            
+            #line 28 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
             this.Write("\r\n");
             
-            #line 29 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 30 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
 
    var isFirst = true;
    foreach(var method in methods){
@@ -221,143 +222,143 @@ if(field.IsReadonly){
             #line default
             #line hidden
             
-            #line 33 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 34 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    if(!isFirst) { 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 35 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 36 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    } 
             
             #line default
             #line hidden
             
-            #line 36 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    isFirst = false; 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.AccessLevel.ToText()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.ReturnType));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.Name));
             
             #line default
             #line hidden
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(method.HasAnyGenerics){ 
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(method.GenericsList));
             
             #line default
             #line hidden
             this.Write(">");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(method.ArgumentsText));
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(method.ArgumentsText(formatter)));
             
             #line default
             #line hidden
             this.Write(")");
             
-            #line 37 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 38 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(method.HasAnyGenericsWhere){ 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 39 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 40 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    foreach(var condition in method.GenericsWheres){ 
             
             #line default
             #line hidden
             this.Write("            where ");
             
-            #line 40 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 41 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(condition));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 41 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 42 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
    } 
             
             #line default
             #line hidden
             
-            #line 42 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 43 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             
-            #line 43 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 44 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  if(!method.HasAnyGenericsWhere) { 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 45 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 46 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("        {\r\n");
             
-            #line 47 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 48 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  foreach(var line in method.Body){ 
             
             #line default
             #line hidden
             this.Write("            ");
             
-            #line 48 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 49 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(line));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 49 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 50 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("        }\r\n");
             
-            #line 51 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
+            #line 52 "D:\github\ClassFileGeneratorCSharp\ClassFileGenerator\Core\Templates\CSharp\Class\ClassTemplate.tt"
  } 
             
             #line default

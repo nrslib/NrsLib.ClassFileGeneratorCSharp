@@ -46,6 +46,9 @@
     <Compile Include="Core\Meta\Def\GenericDefinition.cs" />
     <Compile Include="Core\Meta\Def\ImplementDefinition.cs" />
     <Compile Include="Core\Meta\Def\MethodDefinition.cs" />
+    <Compile Include="Core\Meta\Def\Methods\IArgumentFormatter.cs" />
+    <Compile Include="Core\Meta\Def\Methods\InvertWithColonArgumentFormatter.cs" />
+    <Compile Include="Core\Meta\Def\Methods\SimpleArgumentFormatter.cs" />
     <Compile Include="Core\Meta\Def\UsingDefinition.cs" />
     <Compile Include="Core\Meta\Def\VariantDefinition.cs" />
     <Compile Include="Core\Meta\IMeta.cs" />
@@ -79,7 +82,9 @@
     <Compile Include="MainDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Core\Templates\CSharp\Strategy\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Core\Templates\CSharp\Class\ClassTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

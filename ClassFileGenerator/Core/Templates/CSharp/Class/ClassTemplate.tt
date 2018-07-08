@@ -4,6 +4,7 @@
 <#@ import namespace="System.Text" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="ClassFileGenerator.Core.Meta.Words" #>
+<#@ import namespace="ClassFileGenerator.Core.Meta.Def.Methods" #>
 <# foreach(var usingDefinitions in usings){ #>
 <#= usingDefinitions.ToText() #>;
 <# } #>
@@ -34,7 +35,7 @@ namespace <#= nameSpace #>
 
 <#   } #>
 <#   isFirst = false; #>
-        <#= method.AccessLevel.ToText() #> <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText #>)<# if(method.HasAnyGenericsWhere){ #>
+        <#= method.AccessLevel.ToText() #> <#= method.ReturnType #> <#= method.Name #><# if(method.HasAnyGenerics){ #><<#= method.GenericsList #>><# } #>(<#= method.ArgumentsText(formatter) #>)<# if(method.HasAnyGenericsWhere){ #>
 
 <#   foreach(var condition in method.GenericsWheres){ #>
             where <#= condition #>

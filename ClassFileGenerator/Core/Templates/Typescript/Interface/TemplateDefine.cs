@@ -1,5 +1,6 @@
 ﻿using ClassFileGenerator.Core.Meta;
 using ClassFileGenerator.Core.Meta.Def;
+using ClassFileGenerator.Core.Meta.Def.Methods;
 using ClassFileGenerator.Core.Meta.Settings;
 
 namespace ClassFileGenerator.Core.Templates.Typescript.Interface {
@@ -16,5 +17,6 @@ namespace ClassFileGenerator.Core.Templates.Typescript.Interface {
         private FieldDefinition[] fields => meta.FieldDefinitions;
         private MethodDefinition[] methods => meta.MethodDefinitions;
         private ImplementsSetting implementsSetting => meta.ImplementsSetting;
+        private IArgumentFormatter formatter => new InvertWithColonArgumentFormatter();
     }
 }

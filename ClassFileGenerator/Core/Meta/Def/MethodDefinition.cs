@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using ClassFileGenerator.Core.Meta.Def.Methods;
 using ClassFileGenerator.Core.Meta.Words;
 
 namespace ClassFileGenerator.Core.Meta.Def
@@ -21,7 +22,6 @@ namespace ClassFileGenerator.Core.Meta.Def
         internal AccessLevel AccessLevel { get; private set; } = AccessLevel.Private;
         internal string ReturnType { get; private set; } = "void";
         internal string Name { get; }
-        internal string ArgumentsText => string.Join(", ", Arguments.Select(x => x.ToDeclaration()));
         internal VariantDefinition[] Arguments => arguments.ToArray();
         internal string[] Body => body.Count <= 0 && !noneBody ? new []{"throw new NotImplementedException();"} : body.ToArray();
         internal bool HasAnyGenerics => genericDefinitions.Any();
@@ -65,6 +65,11 @@ namespace ClassFileGenerator.Core.Meta.Def
             predicate?.Invoke(instance);
             genericDefinitions.Add(instance);
             return this;
+        }
+
+        internal string ArgumentsText(IArgumentFormatter fomatter)
+        {
+            return string.Join(", ", Arguments.Select(fomatter.Format));
         }
     }
 }

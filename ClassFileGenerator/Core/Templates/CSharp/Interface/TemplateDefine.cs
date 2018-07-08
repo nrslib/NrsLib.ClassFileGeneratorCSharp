@@ -1,6 +1,7 @@
 ﻿using ClassFileGenerator.Core.Meta;
 using ClassFileGenerator.Core.Meta.Def;
 using ClassFileGenerator.Core.Meta.Settings;
+using ClassFileGenerator.Core.Meta.Def.Methods;
 
 namespace ClassFileGenerator.Core.Templates.CSharp.Interface
 {
@@ -18,5 +19,6 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Interface
         private UsingDefinition[] usings => meta.UsingDefinitions;
         private MethodDefinition[] methods => meta.MethodDefinitions;
         private ImplementsSetting implementsSetting => meta.ImplementsSetting;
+        private IArgumentFormatter formatter => new SimpleArgumenFormatter();
     }
 }

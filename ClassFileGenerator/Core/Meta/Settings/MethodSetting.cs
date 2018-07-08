@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using ClassFileGenerator.Core.Meta.Def;
-using ClassFileGenerator.Core.Meta.Words;
 
 namespace ClassFileGenerator.Core.Meta.Settings
 {
