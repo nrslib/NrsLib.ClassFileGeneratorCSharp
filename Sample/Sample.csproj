@@ -54,8 +54,5 @@
       <Name>ClassFileGenerator</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <TypeScriptCompile Include="test.ts" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
