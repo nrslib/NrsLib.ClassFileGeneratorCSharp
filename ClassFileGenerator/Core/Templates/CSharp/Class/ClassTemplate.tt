@@ -31,6 +31,9 @@ namespace <#= nameSpace #>
 <# foreach(var constructor in constructors){ #>
         <#= constructor.AccessLevel.ToText() #> <#= className #>(<#= constructor.ArgumentsText(formatter) #>)
         {
+<# foreach(var line in constructor.Body){ #>
+            <#= line #>
+<# } #>
         }
 <# } #>
 

@@ -30,7 +30,8 @@ namespace Sample {
                 .AddConstructor(constructor => constructor
                     .SetAccessLevel(AccessLevel.Public)
                     .AddArgument("args", "string[]")
-                    .AddArgument("num", "int"));
+                    .AddArgument("num", "int")
+                    .AddBody("Console.WriteLine(\"Instantiated\");"));
 
             // setup field
             classMeta.SetupFields()
