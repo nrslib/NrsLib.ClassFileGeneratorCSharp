@@ -25,6 +25,13 @@ namespace <#= nameSpace #>
 <# } #>
 <# foreach(var field in fields){ #>
         <#= field.AccessLevel.ToText() #> <#if(field.IsReadonly){ #>readonly <# } #><#= field.Type #> <#= field.Name #><# if(field.Value != null){ #> = <#= field.Value #><# } #>;
+<# } #><# if( constructors.Any()){ #>
+
+<# } #>
+<# foreach(var constructor in constructors){ #>
+        <#= constructor.AccessLevel.ToText() #> <#= className #>(<#= constructor.ArgumentsText(formatter) #>)
+        {
+        }
 <# } #>
 
 <#

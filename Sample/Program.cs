@@ -25,6 +25,13 @@ namespace Sample {
                 .AddImplements("ISuperClass")
                 .AddImplements("ISuperClassWithGeneric", implement => implement.AddGeneric("string"));
 
+            // setup constructor
+            classMeta.SetupConstructor()
+                .AddConstructor(constructor => constructor
+                    .SetAccessLevel(AccessLevel.Public)
+                    .AddArgument("args", "string[]")
+                    .AddArgument("num", "int"));
+
             // setup field
             classMeta.SetupFields()
                 .AddField("testField", field => field.SetType("int").SetValue("1"));

@@ -19,6 +19,7 @@ namespace ClassFileGenerator.Core.Templates.CSharp.Class
         private bool isPartial => meta.ClassSetting.IsPartial;
         private UsingDefinition[] usings => meta.UsingDefinitions;
         private ImplementsSetting implementsSetting => meta.ImplementsSetting;
+        private ConstructorDefinition[] constructors => meta.Constructors;
         private FieldDefinition[] fields => meta.fieldDefinitions;
         private MethodDefinition[] methods => meta.MethodDefinitions;
         private IArgumentFormatter formatter => new SimpleArgumenFormatter();

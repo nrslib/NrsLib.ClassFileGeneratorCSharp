@@ -6,6 +6,7 @@ namespace ClassFileGenerator.Core.Meta
     public class ClassMeta : IMeta
     {
         private readonly ClassSetting classSetting = new ClassSetting();
+        private readonly ConstructorSetting constructorSetting = new ConstructorSetting();
         private readonly UsingSetting usingSetting = new UsingSetting();
         private readonly ImplementsSetting implementsSetting = new ImplementsSetting();
         private readonly FieldsSetting fieldsSetting = new FieldsSetting();
@@ -23,6 +24,7 @@ namespace ClassFileGenerator.Core.Meta
         }
 
         internal ClassSetting ClassSetting => classSetting;
+        internal ConstructorDefinition[] Constructors => constructorSetting.Constructors;
         internal UsingDefinition[] UsingDefinitions => usingSetting.Usings;
         internal ImplementsSetting ImplementsSetting => implementsSetting;
         internal FieldDefinition[] fieldDefinitions => fieldsSetting.Fields;
@@ -31,6 +33,11 @@ namespace ClassFileGenerator.Core.Meta
         public ClassSetting SetupClass()
         {
             return classSetting;
+        }
+
+        public ConstructorSetting SetupConstructor()
+        {
+            return constructorSetting;
         }
         
         public UsingSetting SetupUsing()

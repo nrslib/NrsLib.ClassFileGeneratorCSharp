@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Meta\ClassMeta.cs" />
+    <Compile Include="Core\Meta\Def\ConstructorDefinition.cs" />
     <Compile Include="Core\Meta\Def\FieldDefinition.cs" />
     <Compile Include="Core\Meta\Def\GenericDefinition.cs" />
     <Compile Include="Core\Meta\Def\ImplementDefinition.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Core\Meta\IMeta.cs" />
     <Compile Include="Core\Meta\InterfaceMeta.cs" />
     <Compile Include="Core\Meta\Settings\ClassSetting.cs" />
+    <Compile Include="Core\Meta\Settings\ConstructorSetting.cs" />
     <Compile Include="Core\Meta\Settings\FieldSetting.cs" />
     <Compile Include="Core\Meta\Settings\ImplementsSetting.cs" />
     <Compile Include="Core\Meta\Settings\MethodSetting.cs" />
