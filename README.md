@@ -1,6 +1,11 @@
-# ダウンロード
+# インストール
 
-[dll ダウンロード](https://github.com/srnlib/ClassFileGeneratorCSharp/releases "https://github.com/srnlib/ClassFileGeneratorCSharp/releases")
+nuget で提供されています。
+```
+Install-Package NrsLib.ClassFileGenerator
+```
+
+nuget: [https://www.nuget.org/packages/NrsLib.ClassFileGenerator/](https://www.nuget.org/packages/NrsLib.ClassFileGenerator/ "https://www.nuget.org/packages/NrsLib.ClassFileGenerator/")
 
 # Class file generator CSharp
 t4 テンプレートを利用したクラスファイルの作成用ライブラリです。  
