@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.1</version>
+    <title>$title$</title>
+    <authors>nrs</authors>
+    <owners>nrs</owners>
+    <licenseUrl>https://raw.githubusercontent.com/nrslib/NrsLib.ClassFileGeneratorCSharp/master/NrsLib.ClassFileGenerator/Core/Templates/CSharp/Class/ClassTemplate.tt</licenseUrl>
+    <projectUrl>https://github.com/nrslib/NrsLib.ClassFileGeneratorCSharp</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Generate class file library.</description>
+    <releaseNotes>delete unused file</releaseNotes>
+    <copyright>Copyright 2018</copyright>
+    <tags>generate, C#</tags>
+  </metadata>
+</package>
