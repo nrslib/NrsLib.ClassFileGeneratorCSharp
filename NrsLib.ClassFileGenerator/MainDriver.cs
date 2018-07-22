@@ -38,9 +38,9 @@ namespace NrsLib.ClassFileGenerator {
         private ITemplate FindInterfaceTemplate(InterfaceMeta interfaceMeta, Language language) {
             switch (language) {
                 case Language.CSharp:
-                    return new global::NrsLib.ClassFileGenerator.Core.Templates.CSharp.Interface.Template(interfaceMeta);
+                    return new Core.Templates.CSharp.Interface.Template(interfaceMeta);
                 case Language.Typescript:
-                    return new global::NrsLib.ClassFileGenerator.Core.Templates.Typescript.Interface.Template(interfaceMeta);
+                    return new Core.Templates.Typescript.Interface.Template(interfaceMeta);
                 default:
                     throw new ArgumentOutOfRangeException(nameof(language), language, null);
             }
