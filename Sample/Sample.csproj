@@ -49,7 +49,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassFileGenerator\ClassFileGenerator.csproj">
+    <ProjectReference Include="..\NrsLib.ClassFileGenerator\NrsLib.ClassFileGenerator.csproj">
       <Project>{40523880-519d-432f-ad8b-6826447b4fd7}</Project>
       <Name>ClassFileGenerator</Name>
     </ProjectReference>

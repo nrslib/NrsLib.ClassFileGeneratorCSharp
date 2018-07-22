@@ -1,9 +1,9 @@
 ﻿using System;
-using ClassFileGenerator;
-using ClassFileGenerator.Core.Meta;
-using ClassFileGenerator.Core.Meta.Def;
-using ClassFileGenerator.Core.Meta.Words;
-using ClassFileGenerator.Core.Templates;
+using NrsLib.ClassFileGenerator;
+using NrsLib.ClassFileGenerator.Core.Meta;
+using NrsLib.ClassFileGenerator.Core.Meta.Def;
+using NrsLib.ClassFileGenerator.Core.Meta.Words;
+using NrsLib.ClassFileGenerator.Core.Templates;
 
 namespace Sample {
     class Program {
