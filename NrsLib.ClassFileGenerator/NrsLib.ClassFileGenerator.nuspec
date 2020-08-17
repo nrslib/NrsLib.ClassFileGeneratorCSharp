@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>$id$</id>
-    <version>1.0.2</version>
+    <id>NrsLib.ClassFileGenerator</id>
+    <version>1.0.3</version>
     <title>$title$</title>
     <authors>nrs</authors>
     <owners>nrs</owners>
