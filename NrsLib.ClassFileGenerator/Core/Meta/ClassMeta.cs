@@ -9,6 +9,7 @@ namespace NrsLib.ClassFileGenerator.Core.Meta
         private readonly ConstructorSetting constructorSetting = new ConstructorSetting();
         private readonly UsingSetting usingSetting = new UsingSetting();
         private readonly ImplementsSetting implementsSetting = new ImplementsSetting();
+        private readonly PropertySetting propertySetting = new PropertySetting();
         private readonly FieldsSetting fieldsSetting = new FieldsSetting();
         private readonly MethodsSetting methodSetting = new MethodsSetting();
 
@@ -27,7 +28,8 @@ namespace NrsLib.ClassFileGenerator.Core.Meta
         internal ConstructorDefinition[] Constructors => constructorSetting.Constructors;
         internal UsingDefinition[] UsingDefinitions => usingSetting.Usings;
         internal ImplementsSetting ImplementsSetting => implementsSetting;
-        internal FieldDefinition[] fieldDefinitions => fieldsSetting.Fields;
+        internal PropertyDefinition[] PropertyDefinitions => propertySetting.Properties;
+        internal FieldDefinition[] FieldDefinitions => fieldsSetting.Fields;
         internal MethodDefinition[] MethodDefinitions => methodSetting.Methods;
 
         public ClassSetting SetupClass()
@@ -48,6 +50,11 @@ namespace NrsLib.ClassFileGenerator.Core.Meta
         public ImplementsSetting SetupImplements()
         {
             return implementsSetting;
+        }
+
+        public PropertySetting SetupProperty()
+        {
+            return propertySetting;
         }
 
         public FieldsSetting SetupFields()

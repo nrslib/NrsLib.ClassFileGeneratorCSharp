@@ -39,6 +39,17 @@ namespace <#= nameSpace #>
 
 <#
    var isFirst = true;
+   foreach(var property in properties){
+#>
+<#   if(!isFirst) { #>
+
+<#   } #>
+<#   isFirst = false; #>
+        <#= property.MaxAccessLevel.ToText() #> <#= property.Type #> <#= property.Name #> {<#= property.GetterAccessLevel == property.MaxAccessLevel ? "" : property.GetterAccessLevel.ToText() #> get;<# if(property.HasSetter){ #><#= property.SetterAccessLevel == property.MaxAccessLevel ? "" : " " + property.SetterAccessLevel.ToText() #> set;<# } #> }
+<#
+  }
+#>
+<#
    foreach(var method in methods){
 #>
 <#   if(!isFirst) { #>

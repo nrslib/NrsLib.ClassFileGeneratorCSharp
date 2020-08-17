@@ -20,7 +20,8 @@ namespace NrsLib.ClassFileGenerator.Core.Templates.CSharp.Class
         private UsingDefinition[] usings => meta.UsingDefinitions;
         private ImplementsSetting implementsSetting => meta.ImplementsSetting;
         private ConstructorDefinition[] constructors => meta.Constructors;
-        private FieldDefinition[] fields => meta.fieldDefinitions;
+        private FieldDefinition[] fields => meta.FieldDefinitions;
+        private PropertyDefinition[] properties => meta.PropertyDefinitions;
         private MethodDefinition[] methods => meta.MethodDefinitions;
         private IArgumentFormatter formatter => new SimpleArgumenFormatter();
     }
