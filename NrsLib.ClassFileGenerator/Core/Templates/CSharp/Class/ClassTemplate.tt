@@ -29,7 +29,8 @@ namespace <#= nameSpace #>
 
 <# } #>
 <# foreach(var constructor in constructors){ #>
-        <#= constructor.AccessLevel.ToText() #> <#= className #>(<#= constructor.ArgumentsText(formatter) #>)
+        <#= constructor.AccessLevel.ToText() #> <#= className #>(<#= constructor.ArgumentsText(formatter) #>)<# if (constructor.CallBase) { #> : base(<#= constructor.CallArgumentsText() #>)<# } #><# if (constructor.CallThis) { #> : this(<#= constructor.CallArgumentsText() #>)<# } #>
+
         {
 <# foreach(var line in constructor.Body){ #>
             <#= line #>

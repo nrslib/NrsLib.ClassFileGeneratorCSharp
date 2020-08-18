@@ -31,7 +31,11 @@ namespace Sample {
                     .SetAccessLevel(AccessLevel.Public)
                     .AddArgument("args", "string[]")
                     .AddArgument("num", "int")
-                    .AddBody("Console.WriteLine(\"Instantiated\");"));
+                    .AddBody("Console.WriteLine(\"Instantiated\");"))
+                .AddConstructor(constructor => constructor
+                    .SetAccessLevel(AccessLevel.Public)
+                    .AddArgument("args", "string[]")
+                    .SetCallThis("args", "1"));
 
             // setup field
             classMeta.SetupFields()
@@ -54,6 +58,9 @@ namespace Sample {
                         .AddGenerics("TT", generics => generics.AddWhere("class"))
                         .AddArgument("t", "T")
                 );
+
+            classMeta.SetupProperty()
+                .AddProperty("test");
 
             // if you don't want to use lambda
             var tmpMethod = new MethodDefinition("TempMethod");

@@ -91,18 +91,18 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Core\Templates\CSharp\Class\ClassTemplate.tt">
+    <None Include="Core\Templates\CSharp\Class\ClassTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ClassTemplate.cs</LastGenOutput>
-    </Content>
-    <Content Include="Core\Templates\CSharp\Interface\Template.tt">
+    </None>
+    <None Include="Core\Templates\CSharp\Interface\Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Template.cs</LastGenOutput>
-    </Content>
-    <Content Include="Core\Templates\Typescript\Interface\Template.tt">
+    </None>
+    <None Include="Core\Templates\Typescript\Interface\Template.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>Template.cs</LastGenOutput>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
